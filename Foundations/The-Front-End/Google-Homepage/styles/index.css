@@ -1,0 +1,32 @@
+#top-bar {
+  display: flex;
+}
+
+#core-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#google-logo {
+  max-width: 554px;
+}
+
+#footer {
+  display: flex;
+}
+
+.left-aligned {
+  flex: 1;
+  text-align: left;
+}
+
+.center-aligned {
+  flex: 1;
+  text-align: center;
+}
+
+.right-aligned {
+  flex: 1;
+  text-align: right;
+}
