@@ -34,6 +34,11 @@ html, body {
   max-width: 272px;
 }
 
+#search-icon {
+  max-width: 35px;
+  max-height: 35px;
+}
+
 #footer {
   height: 50px;
   background-color: #f2f2f2;
