@@ -57,12 +57,20 @@ body {
 }
 
 #footer {
+  display: flex;
+  flex-direction: column;
   height: 50px;
   background-color: #f2f2f2;
 }
 
+#footer-top-filler {
+  flex: 1;
+}
+
 #bottom-bar {
   display: flex;
+  flex: 2;
+  align-content: center;
   color: #70757a;
   margin-bottom: auto;
 }
@@ -70,6 +78,8 @@ body {
 #bottom-bar a {
   text-decoration: none;
   color:#70757a;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 #bottom-bar a:link, a:visited, a:active {
@@ -81,22 +91,42 @@ body {
   text-decoration: underline;
 }
 
-.left-aligned {
-  flex: 1;
-  text-align: left;
+#bottom-bar-left {
+  display: flex;
+  flex: 2;
+  justify-content: flex-start;
+  align-items:center;
 }
 
-.center-aligned {
+#bottom-bar-middle {
+  display: flex;
   flex: 1;
-  text-align: center;
+  justify-content: center;
+  align-items:center;
 }
 
-.right-aligned {
+#bottom-bar-right {
+  display: flex;
+  flex: 2;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#footer-bottom-filler {
   flex: 1;
-  text-align: right;
 }
 
 #green-leaf-icon {
   max-width: 10px;
   max-height: 10px;
+}
+
+.left-aligned {
+  flex: 1;
+  text-align: left;
+}
+
+.right-aligned {
+  flex: 1;
+  text-align: right;
 }
