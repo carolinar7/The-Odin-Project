@@ -10,6 +10,10 @@ body {
   flex-direction: column;
 }
 
+#navigation {
+  flex: 1;
+}
+
 #top-bar {
   display: flex;
 }
@@ -29,7 +33,7 @@ body {
 }
 
 #google-logo-container {
-  flex: 1;
+  flex: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,7 +41,7 @@ body {
 }
 
 #core-page {
-  flex: 1;
+  flex: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -53,13 +57,13 @@ body {
 }
 
 #filler {
-  flex: 1;
+  flex: 2;
 }
 
 #footer {
   display: flex;
+  flex: 1;
   flex-direction: column;
-  height: 50px;
   background-color: #f2f2f2;
 }
 
