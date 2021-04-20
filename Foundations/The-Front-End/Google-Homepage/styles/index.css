@@ -2,7 +2,8 @@ html, body {
   margin: 0px;
   padding: 0px;
   min-height: 100%;
-  height: 100%
+  height: 100%;
+  font-size: 1em;
 }
 
 body {
@@ -17,6 +18,7 @@ body {
 #top-bar {
   display: flex;
   flex-wrap: nowrap;
+  align-items: center;
   margin-top: 10px;
   margin-left: 15px;
   margin-right: 15px;
@@ -36,6 +38,14 @@ body {
 
 #top-bar a:hover {
   text-decoration: underline;
+}
+
+#top-bar-left {
+  white-space: nowrap;
+}
+
+#top-bar-right {
+  white-space: nowrap; 
 }
 
 #google-logo-container {
@@ -84,23 +94,17 @@ body {
   background-color: #f2f2f2;
 }
 
-#footer-top-filler {
-  flex: 1;
-}
-
 #bottom-bar {
   display: flex;
-  flex: 3;
+  flex: 1;
   align-content: center;
   color: #70757a;
-  margin-bottom: auto;
 }
 
 #bottom-bar a {
   text-decoration: none;
   color:#70757a;
-  margin-left: 15px;
-  margin-right: 15px;
+  margin: 15px;
 }
 
 #bottom-bar a:link, a:visited, a:active {
@@ -131,10 +135,6 @@ body {
   flex: 2;
   justify-content: flex-end;
   align-items: center;
-}
-
-#footer-bottom-filler {
-  flex: 1;
 }
 
 #green-leaf-icon {
