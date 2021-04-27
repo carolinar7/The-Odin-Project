@@ -13,11 +13,24 @@ function search() {
   }
 }
 
+// Add shadow to search box if mouse hovers over
+function searchBarHover(boolVal) {
+  if (boolVal) {
+    document.getElementById("search-bar").style.boxShadow = "0px 0px 5px rgb(200, 200, 200)";
+  } else {
+    if (document.activeElement != document.getElementById("search-textarea"))
+      document.getElementById("search-bar").style.boxShadow = "none";
+  }
+}
+
 // Searches text if user presses enter, and highlights search bar
 function searchOnFocus() {
   let searchBar = document.getElementById("search-bar");
   let searchText = document.getElementById("search-textarea");
   
+  searchBar.style.boxShadow = "0px 0px 5px rgb(200, 200, 200)";
+
+  // Enter capability
   searchText.onkeypress = function(e) {
     if (!e) {
       e = window.event;
