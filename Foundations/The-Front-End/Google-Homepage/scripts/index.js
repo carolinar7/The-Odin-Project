@@ -5,10 +5,13 @@ function signIn() {
 
 // Concatenates the basic query url with the input text and
 // navigates there
-function search() {
-  let searchContent = document.getElementById("search-textarea").value;
-  if (searchContent.length != 0) {
-    let searchURL = "https://www.google.com/search?q=" + searchContent;
+function search(boolVal) {
+  let searchTextArea = document.getElementById("search-textarea");
+  let searchButton = document.getElementById("search-button");
+  if (boolVal == true)
+    searchButton.style.border = ".5px solid #1a73e8";
+  if (searchTextArea.value.length != 0) {
+    let searchURL = "https://www.google.com/search?q=" + searchTextArea.value;
     location.href = searchURL;
   }
 }
@@ -37,7 +40,7 @@ function searchOnFocus() {
     }
     let keyCode = e.code || e.key;
     if ((keyCode == "Enter") && (searchText.value.length != 0)) {
-      search();
+      search(false);
       return false;
     }
   }
