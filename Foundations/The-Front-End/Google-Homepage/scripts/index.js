@@ -55,12 +55,20 @@ function searchOnBlur() {
 // Display x when there is text in search text area
 function displayX() {
   let searchTextArea = document.getElementById("search-textarea");
-  if (searchTextArea.value.length == 0) {
+  if ((searchTextArea.value.length == 0)) {
     document.getElementById("x-icon").style.opacity = "0";
   } else {
     document.getElementById("x-icon").style.opacity = "100";
   }
 }
+
+function clearText() {
+  let searchTextArea = document.getElementById("search-textarea");
+  if (searchTextArea.value.length != 0) {
+    searchTextArea.value = "";
+    displayX();
+  }
+} 
 
 // Clears the text area whenever the page is closed/redirected
 window.addEventListener("pageshow", () => {
