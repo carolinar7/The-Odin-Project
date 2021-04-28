@@ -62,6 +62,7 @@ function displayX() {
   }
 }
 
+// Remove text when x is pressed
 function clearText() {
   let searchTextArea = document.getElementById("search-textarea");
   if (searchTextArea.value.length != 0) {
