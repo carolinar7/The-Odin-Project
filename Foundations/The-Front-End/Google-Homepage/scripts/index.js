@@ -46,6 +46,22 @@ function searchOnFocus() {
   }
 }
 
+// Remove search bar background if off focus
+function searchOnBlur() {
+  if (document.getElementById("search-textarea").value.length == 0)
+      document.getElementById("search-bar").style.boxShadow = "none";
+}
+
+// Display x when there is text in search text area
+function displayX() {
+  let searchTextArea = document.getElementById("search-textarea");
+  if (searchTextArea.value.length == 0) {
+    document.getElementById("x-icon").style.opacity = "0";
+  } else {
+    document.getElementById("x-icon").style.opacity = "100";
+  }
+}
+
 // Clears the text area whenever the page is closed/redirected
 window.addEventListener("pageshow", () => {
   document.getElementById("search-textarea").value = "";

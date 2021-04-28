@@ -27,7 +27,7 @@
   <div id="core-page">
     <div id="search-bar" onmouseover="searchBarHover(true)" onmouseout="searchBarHover(false)">
       <img id="search-icon" src="images/search-icon.png" alt="Search icon">
-      <textarea id="search-textarea" wrap="off" rows="1" onfocus="searchOnFocus()"></textarea>
+      <textarea id="search-textarea" wrap="off" rows="1" onfocus="searchOnFocus()" onblur="searchOnBlur()" oninput="displayX()"></textarea>
       <img id="x-icon" src="images/x-icon.svg" alt="X icon">
     </div>
     <div id="core-page-button-group">
