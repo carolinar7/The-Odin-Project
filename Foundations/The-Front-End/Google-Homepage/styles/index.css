@@ -100,6 +100,13 @@ body {
   outline: none;
 }
 
+#x-icon {
+  max-width: 1em;
+  height: 1em;
+  margin: 2px;
+  margin-right: 5px;
+}
+
 #core-page-button-group {
   margin-top: 20px;
   margin-bottom: 20px;
