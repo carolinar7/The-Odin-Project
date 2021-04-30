@@ -16,6 +16,15 @@ function search(boolVal) {
   }
 }
 
+// Goes directly to the first returned page without needing to be redirected
+function feelingLucky() {
+  let searchTextArea = document.getElementById("search-textarea");
+  if (searchTextArea.value.length != 0) {
+    let searchURL = "https://www.google.com/search?q=" + searchTextArea.value + "&btnI=I";
+    location.href = searchURL;
+  }
+}
+
 // Add shadow to search box if mouse hovers over
 function searchBarHover(boolVal) {
   if (boolVal) {
