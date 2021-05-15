@@ -34,10 +34,16 @@ function printResult(str) {
 }
 
 const rockBtn = document.getElementById('rock');
-rockBtn.onclick = () => printResult(playRound(computerPlay(), ROCK));
+rockBtn.addEventListener('click', () => {
+  printResult(playRound(computerPlay(), ROCK))
+});
 
 const paperBtn = document.getElementById('paper');
-paperBtn.onclick = () => printResult(playRound(computerPlay(), PAPER));
+paperBtn.addEventListener('click', () => {
+  printResult(playRound(computerPlay(), PAPER))
+});
 
 const scissorsBtn = document.getElementById('scissors');
-scissorsBtn.onclick = () => printResult(playRound(computerPlay(), SCISSORS));
+scissorsBtn.addEventListener('click', () => {
+  printResult(playRound(computerPlay(), SCISSORS))
+});
