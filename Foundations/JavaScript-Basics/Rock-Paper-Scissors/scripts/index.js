@@ -22,10 +22,10 @@ function playRound(computerChoice, playerChoice) {
     playerScore += 1;
     return 'You Win! Spider-Man beats Iron Man';
   } else if (computerChoice == IRONMAN && playerChoice == THANOS) {
-    playerScore += 1;
+    computerScore += 1;
     return 'You Lose! Iron Man beats Thanos';
   } else if (computerChoice == THANOS && playerChoice == SPIDERMAN) {
-    playerScore += 1;
+    computerScore += 1;
     return 'You Lose! Thanos beats Spider-Man';
   } else {
     playerScore += 1;
@@ -42,7 +42,10 @@ function printResult(str) {
 }
 
 function updateScores() {
-  
+  const playerScoreTxt = document.getElementById('player-score');
+  const computerScoreTxt = document.getElementById('computer-score');
+  playerScoreTxt.textContent = `Player score: ${playerScore}`;
+  computerScoreTxt.textContent = `Computer score: ${computerScore}`;
 }
 
 const spidermanImg = document.getElementById('spiderman');
