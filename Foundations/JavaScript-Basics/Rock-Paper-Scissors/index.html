@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Rock, Paper, Scissors</title>
+    <title>Spider-Man, Iron Man, Thanos</title>
+    <link rel='stylesheet' href='styles/index.css'>
   </head>
   <body>
-    <p>Rock, Paper, or Scissors?</p>
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissors">Scissors</button>
-    <div id="game-result"></div>
-    <script type="text/javascript" src="index.js"></script>
+    <h1>Spider-Man, Iron Man, or Thanos?</h1>
+    <div id='player-computer-container'>
+      <p>Player score: 0</p>
+      <p>Computer score: 0</p>
+      <div id='player-selection'>
+        <img src='images/spiderman.jpg' id='spiderman' alt="Spider-Man">
+        <img src='images/ironman.jpg' id='ironman' alt="Iron Man">
+        <img src='images/thanos.jpg' id='thanos' alt="Thanos">
+      </div>
+      <div id='computer-selection'></div>
+    </div>
+    <div id='game-result'></div>
+    <script type='text/javascript' src='scripts/index.js'></script>
   </body>
 </html>
