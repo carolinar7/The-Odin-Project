@@ -3,6 +3,37 @@ h1 {
 }
 
 img {
-  height: 10%;
-  width: 10%;
+  width: 10em;
+  min-height: 150px;
+  height: auto;
+}
+
+#computer-selection {
+  height: auto;
+}
+
+.spin-container {
+  margin: 0px auto;
+  margin-top: 50px;
+}
+
+.spin-container-mask {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+}
+
+.spin-item-container {
+  position: absolute;
+}
+
+.spin-item {
+  min-height: 150px;
+  max-height: 150px;
+  margin: 0px;
+  padding: 0px;
+  background-size: contain;
+  display: block;
 }

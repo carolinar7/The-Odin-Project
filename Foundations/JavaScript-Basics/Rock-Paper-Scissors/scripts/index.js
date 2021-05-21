@@ -1,24 +1,31 @@
-const SPIDERMAN = 1;
-const IRONMAN = 2;
-const THANOS = 3;
+const SPIDERMAN = 0;
+const IRONMAN = 1;
+const THANOS = 2;
 const MAX_TYPES = 3;
-const PLAYER_WINNER = 'You win the best of 5!'
-const COMPUTER_WINNER = 'You lost the best of 5 :('
-var play = true;
-var playerScore = 0;
-var computerScore = 0;
-
-function computerPlay() {
-  return Math.ceil((Math.random() * MAX_TYPES));
-}
+const PLAYER_WINNER = 'You win the best of 5!';
+const COMPUTER_WINNER = 'You lost the best of 5 :(';
+const SPIDERMAN_IMG = 'images/spiderman.jpg';
+const IRONMAN_IMG = 'images/ironman.jpg';
+const THANOS_IMG = 'images/thanos.jpg';
+let play = true;
+let playerScore = 0;
+let computerScore = 0;
+let imgList = [
+  SPIDERMAN_IMG,
+  IRONMAN_IMG,
+  THANOS_IMG
+]
 
 function playerPlay(selection) {
   if (play === false) {
     return;
   }
 
-  printResult(playRound(computerPlay(), selection))
-  updateScores();
+  let computerSelection = animate();
+  setTimeout(() => {
+    printResult(playRound(computerSelection, selection));
+    updateScores();
+  }, 700);
 }
 
 function playRound(computerChoice, playerChoice) {
@@ -78,6 +85,63 @@ function updateScores() {
   playerScoreTxt.textContent = `Player score: ${playerScore}`;
   computerScoreTxt.textContent = `Computer score: ${computerScore}`;
 }
+
+
+// Spinning animation
+function buildSpinItem(img) {
+  return $('<img>').addClass('spin-item').attr('src', img);
+}
+
+function buildSpinConents($container, imgList) {
+  $items = imgList.map(buildSpinItem);
+  $container.append($items);
+}
+
+function popPushNItems ($container, n) {
+  $children = $container.find('.spin-item');
+  $children.slice(0, n).insertAfter($children.last());
+
+  if (n === $children.length) {
+    popPushNItems($container, 1);
+  }
+}
+
+function rotateContents ($container, n) {
+  setTimeout(() => {
+    popPushNItems($container, n);
+    $container.css({top: 0});
+  }, 300);    
+}
+
+function randomSlotttIndex(max) {
+  let randIndex = max - Math.ceil((Math.random() * MAX_TYPES));
+  return randIndex;
+}
+
+function animate() {
+  let itemIndex = randomSlotttIndex(imgList.length * 4);
+  
+  $itemBox.animate({top: -itemIndex*150}, 500, 'swing', () => {
+    rotateContents($itemBox, itemIndex);
+  });
+  
+  const firstImg = document.getElementsByClassName('spin-item');
+  let firstImgSrc = firstImg[itemIndex].getAttribute('src');
+  if (firstImgSrc === SPIDERMAN_IMG) {
+    return 0;
+  } else if (firstImgSrc === IRONMAN_IMG) {
+    return 1;
+  } else {
+    return 2;
+  };
+}
+
+$(() => {
+  $itemBox = $('#item-box .spin-item-container');
+  for (i = 0; i < 4; i++) {
+    buildSpinConents($itemBox, imgList);
+  }
+});
 
 const spidermanImg = document.getElementById('spiderman');
 spidermanImg.addEventListener('click', () => playerPlay(SPIDERMAN));
