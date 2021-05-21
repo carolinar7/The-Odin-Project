@@ -8,6 +8,7 @@ const SPIDERMAN_IMG = 'images/spiderman.jpg';
 const IRONMAN_IMG = 'images/ironman.jpg';
 const THANOS_IMG = 'images/thanos.jpg';
 let play = true;
+let timeout = false;
 let playerScore = 0;
 let computerScore = 0;
 let imgList = [
@@ -21,10 +22,12 @@ function playerPlay(selection) {
     return;
   }
 
+  timeout = true;
   let computerSelection = animate();
   setTimeout(() => {
     printResult(playRound(computerSelection, selection));
     updateScores();
+    setTimeout(() => timeout = false, 300);
   }, 700);
 }
 
@@ -63,16 +66,13 @@ function playAgain() {
 function printResult(str) {
   const resultDiv = document.getElementById('game-result');
 
-  if (resultDiv.hasChildNodes()) {
-    resultDiv.removeChild(resultDiv.childNodes[0]);
-  }
-
   if (playerScore === 5 || computerScore === 5) {
     str = (playerScore === 5) ? PLAYER_WINNER : COMPUTER_WINNER;
     play = false;
   }
 
   resultDiv.appendChild(document.createTextNode(str));
+  resultDiv.appendChild(document.createElement('br'));
 
   if (play === false) {
     playAgain();
@@ -144,10 +144,22 @@ $(() => {
 });
 
 const spidermanImg = document.getElementById('spiderman');
-spidermanImg.addEventListener('click', () => playerPlay(SPIDERMAN));
+spidermanImg.addEventListener('click', () => {
+  if (!timeout) {
+    playerPlay(SPIDERMAN);
+  }
+});
 
 const ironmanImg = document.getElementById('ironman');
-ironmanImg.addEventListener('click', () => playerPlay(IRONMAN));
+ironmanImg.addEventListener('click', () => {
+  if (!timeout) {
+    playerPlay(IRONMAN);
+  }
+});
 
 const thanosImg = document.getElementById('thanos');
-thanosImg.addEventListener('click', () => playerPlay(THANOS));
+thanosImg.addEventListener('click', () => {
+  if (!timeout) {
+    playerPlay(THANOS);
+  }
+});

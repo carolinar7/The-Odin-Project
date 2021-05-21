@@ -1,5 +1,20 @@
+html, body {
+  background-color: white;
+  color: black;
+}
+
 h1 {
   text-align: center;
+}
+
+#player-computer-container {
+  display: flex;
+  width: 75%;
+  margin: 40px auto;
+}
+
+#player-selection {
+  flex: 1;
 }
 
 img {
@@ -9,12 +24,12 @@ img {
 }
 
 #computer-selection {
+  flex: 1;
   height: auto;
 }
 
 .spin-container {
   margin: 0px auto;
-  margin-top: 50px;
 }
 
 .spin-container-mask {
